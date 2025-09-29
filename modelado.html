@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía del Modelo de Negocio: AgroCode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #3498DB;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900">AgroCode</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mt-2">Transformando la Agricultura en Nicaragua con Datos</p>
+        </header>
+
+        <section id="problema" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">El Desafío: La Ceguera Operacional del Productor</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">Los pequeños y medianos productores nicaragüenses operan con alta incertidumbre, enfrentando pérdidas significativas por la falta de herramientas accesibles para tomar decisiones informadas.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-6xl font-extrabold text-[#FF6F61]">30%</p>
+                    <p class="text-lg font-semibold mt-2">Pérdida de Cosecha</p>
+                    <p class="mt-2 text-gray-600">Por detección tardía de plagas como la Roya y la Broca en el café.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-6xl font-extrabold text-[#FFB447]">20%</p>
+                    <p class="text-lg font-semibold mt-2">Despilfarro de Insumos</p>
+                    <p class="mt-2 text-gray-600">Por riego y fertilización basados en intuición en lugar de datos climáticos precisos ($ET_0$).</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-6xl font-extrabold text-[#3498DB]">Valor</p>
+                    <p class="text-lg font-semibold mt-2">Pérdida de Valor del Ganado</p>
+                    <p class="mt-2 text-gray-600">Por falta de trazabilidad auditable que impide el acceso a mercados premium y expone al abigeato.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucion" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">La Solución: Un Asesor Técnico en el Bolsillo</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">AgroCode es una aplicación móvil offline-first que unifica el control de la finca, transformando la incertidumbre en decisiones rentables a través de tres pilares tecnológicos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">☕</p>
+                    <h3 class="text-xl font-bold">Sanidad del Café con IA</h3>
+                    <p class="mt-2 text-gray-600">Diagnóstico instantáneo de plagas y enfermedades usando la cámara del celular, permitiendo una acción rápida y reduciendo el uso de químicos.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">🌦️</p>
+                    <h3 class="text-xl font-bold">Optimización Climática</h3>
+                    <p class="mt-2 text-gray-600">Traduce datos complejos de $ET_0$ y humedad en recomendaciones precisas de riego y abono, ahorrando insumos vitales.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">🐄</p>
+                    <h3 class="text-xl font-bold">Trazabilidad Ganadera</h3>
+                    <p class="mt-2 text-gray-600">Registro digital auditable de cada animal para acceder a precios premium y alertas de geocerca para prevenir el robo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">¿Cómo Funciona?</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">El flujo de trabajo de AgroCode es simple, intuitivo y está diseñado para operar en el campo, incluso sin conexión a internet.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <div class="bg-white rounded-lg shadow-md p-4 text-center w-48 h-32 flex items-center justify-center"><span>1. Capturar Datos<br>(Foto o registro)</span></div>
+                <div class="flow-arrow hidden md:block">➡️</div>
+                <div class="flow-arrow block md:hidden">⬇️</div>
+                <div class="bg-white rounded-lg shadow-md p-4 text-center w-48 h-32 flex items-center justify-center"><span>2. Analizar con IA<br>(Diagnóstico offline)</span></div>
+                <div class="flow-arrow hidden md:block">➡️</div>
+                <div class="flow-arrow block md:hidden">⬇️</div>
+                <div class="bg-white rounded-lg shadow-md p-4 text-center w-48 h-32 flex items-center justify-center"><span>3. Recibir Acción<br>(Recomendación)</span></div>
+                <div class="flow-arrow hidden md:block">➡️</div>
+                <div class="flow-arrow block md:hidden">⬇️</div>
+                <div class="bg-white rounded-lg shadow-md p-4 text-center w-48 h-32 flex items-center justify-center"><span>4. Generar Reporte<br>(Trazabilidad PDF)</span></div>
+            </div>
+        </section>
+        
+        <section id="valor" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">La Propuesta de Valor Cuantificada</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">AgroCode no solo mejora la gestión, sino que impacta directamente en la rentabilidad del productor, generando ahorros y abriendo nuevas oportunidades de ingreso.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Ahorro Estimado de Insumos</h3>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="savingsChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">Optimizar el riego y la fertilización puede reducir el consumo de agua y abono entre un 10% y 20%.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Potencial de Ingresos Adicionales</h3>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">La trazabilidad certificada permite acceder a mercados premium, aumentando el precio de venta del ganado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mercado" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Nuestro Mercado Objetivo</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">Nos enfocamos en los actores clave del ecosistema agrícola de Nicaragua que más se benefician de la digitalización y la toma de decisiones basada en datos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">🧑‍🌾</p>
+                    <h3 class="text-xl font-bold">Productores Mixtos</h3>
+                    <p class="mt-2 text-gray-600">Pequeños y medianos agricultores que gestionan café y ganado y necesitan una herramienta todo-en-uno.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">🧑‍🔧</p>
+                    <h3 class="text-xl font-bold">Técnicos y Extensionistas</h3>
+                    <p class="mt-2 text-gray-600">Profesionales que monitorean múltiples fincas y requieren flujos de trabajo eficientes y reportes consolidados.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-5xl mb-4">🏢</p>
+                    <h3 class="text-xl font-bold">Cooperativas y Compradores</h3>
+                    <p class="mt-2 text-gray-600">Organizaciones interesadas en la trazabilidad y los datos sanitarios para auditorías y compras de calidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="modelo-negocio" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Modelo de Negocio Sostenible</h2>
+             <p class="text-lg text-center max-w-3xl mx-auto mb-10">Nuestro modelo se basa en la accesibilidad para el productor y la generación de valor a lo largo de toda la cadena de suministro.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Fuentes de Ingresos</h3>
+                     <div class="chart-container h-64 md:h-80">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">Un modelo diversificado que combina suscripciones asequibles con servicios de valor agregado.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Estructura de Costes Clave</h3>
+                    <ul class="space-y-4 mt-6 text-lg">
+                        <li class="flex items-center"><span class="text-2xl mr-3">💻</span> <span>Desarrollo y Mantenimiento de Software</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🧠</span> <span>I+D y Reentrenamiento del Modelo de IA</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">☁️</span> <span>Costos de Infraestructura en la Nube</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🤝</span> <span>Capacitación y Soporte en Campo</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-6 bg-gray-800 text-white">
+        <p>AgroCode © 2025. Impulsando el futuro de la agricultura nicaragüense.</p>
+    </footer>
+
+    <script>
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const palette = {
+            coral: '#FF6F61',
+            orange: '#FFB447',
+            blue: '#3498DB',
+            green: '#2ECC71',
+            yellow: '#F1C40F',
+            lightGray: '#ECF0F1',
+            darkGray: '#34495E'
+        };
+
+        function createSavingsChart() {
+            const ctx = document.getElementById('savingsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Consumo Actual', 'Ahorro Potencial (15%)'],
+                    datasets: [{
+                        data: [85, 15],
+                        backgroundColor: [palette.blue, palette.green],
+                        borderColor: ['#FFFFFF'],
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...tooltipCallback.plugins,
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+        }
+
+        function createIncomeChart() {
+            const ctx = document.getElementById('incomeChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Precio Estándar', 'Precio Premium con Trazabilidad'],
+                    datasets: [{
+                        label: 'Ingreso por Animal',
+                        data: [100, 125],
+                        backgroundColor: [palette.orange, palette.coral],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                         ...tooltipCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function createRevenueChart() {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Suscripción SaaS', 'Servicios Premium', 'Monetización de Datos'],
+                    datasets: [{
+                        data: [65, 25, 10],
+                        backgroundColor: [palette.green, palette.blue, palette.yellow],
+                        borderColor: ['#FFFFFF'],
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                         ...tooltipCallback.plugins,
+                        legend: {
+                            position: 'bottom',
+                        },
+                    }
+                }
+            });
+        }
+        
+        window.onload = function() {
+            createSavingsChart();
+            createIncomeChart();
+            createRevenueChart();
+        };
+
+    </script>
+
+</body>
+</html>
